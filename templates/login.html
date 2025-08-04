@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI-Powered Login Behavior Lab</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #dbeafe, #f0f4ff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #1e3a8a;
+            font-size: 28px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+            transform: translateY(20px);
+            animation: slideUp 0.7s ease forwards;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            color: #64748b;
+            pointer-events: none;
+            transition: 0.3s ease;
+            background: #fff;
+            padding: 0 4px;
+        }
+
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label {
+            top: -8px;
+            font-size: 11px;
+            color: #1e3a8a;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+            transform: scale(1.02);
+        }
+
+        .restart {
+            background-color: #e2e8f0;
+            color: #1e293b;
+            margin-top: 12px;
+        }
+
+        .restart:hover {
+            background-color: #cbd5e1;
+        }
+
+        .summary {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.5;
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>AI-Powered Login Behavior Lab</h1>
+
+    <div class="container">
+        <form method="POST" action="/login">
+            <div class="input-group">
+                <input type="text" name="username" placeholder=" " required>
+                <label>Username</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" placeholder=" " required>
+                <label>Password</label>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <button class="restart" onclick="location.reload();">Restart</button>
+
+        <div class="summary">
+            This login form simulates login activity for the AI to learn behavior patterns.<br>
+            Each submission is tracked with time, device, and network data.
+        </div>
+    </div>
+</body>
+</html>

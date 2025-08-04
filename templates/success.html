@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8fa;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .box {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            padding: 30px;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .info, .summary, .severity {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .severity {
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0050b3;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003f8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🔍 Login Analyzed</h1>
+        <div class="info">
+            <p><strong>User:</strong> {{ username }}</p>
+            <p><strong>Hour:</strong> {{ hour }} | <strong>Weekday:</strong> {{ weekday }}</p>
+            <p><strong>IP:</strong> {{ ip }}</p>
+        </div>
+
+        <div class="summary">
+            <h3>🧠 AI Summary:</h3>
+            <p>{{ summary }}</p>
+        </div>
+
+        <div class="severity">
+            Severity: {{ severity }}
+        </div>
+
+        <form action="/" method="get">
+            <button type="submit">🔁 Try Another Login</button>
+        </form>
+    </div>
+</body>
+</html>
